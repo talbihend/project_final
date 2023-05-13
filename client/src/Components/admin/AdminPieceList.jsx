@@ -1,10 +1,17 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { getPieces } from '../../redux/actions/pieceActions';
 import AdminPieceCard from './AdminPieceCard';
+
 
 const AdminPieceList = () => {
 
   const { pieces, loading } = useSelector((state) => state.piecesReducers);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPieces());
+  }, []);
   
 
 
