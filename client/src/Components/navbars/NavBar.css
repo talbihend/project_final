@@ -1,0 +1,31 @@
+
+.div-nav{
+    display: flex;
+    box-shadow: 10px 10px 10px 1px grey;
+    /* background-color:	rgb( 247 , 247 , 243); */
+    background-color: transparent;
+    height: 100px;
+    
+}
+.title-nav{
+    margin-left: 150px;
+    font-size: 50px;
+    margin-top: 10px;
+
+}
+.title-connect{
+    text-decoration: none;
+    margin-left: 50px;
+    margin-top: 30px;
+    color: black;
+}
+.title-home{
+    text-decoration: none  !important;
+    margin-left: 500px;
+    margin-top: 30px;
+    color: black;
+
+}
+.Link{
+    text-decoration: none;
+}
