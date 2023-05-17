@@ -11,7 +11,7 @@ import {
   GET_PIECES,
   GET_PIECES_FAIL,
   GET_PIECES_SUCCESS,
-} from "../actionTypes/pieceActionTypes";
+} from "../actionTypes/pieceActionTypes"; 
 import axios from "axios";
 
 
@@ -75,14 +75,15 @@ export const editPieces = (MyPiece) => async (dispatch) => {
     type: EDIT_PIECES ,
   });
   try {
-    const res = await axios.put(`/piece/update/${MyPiece._id}`, MyPiece);
+    const res = await axios.put(`/piece/updatepiece/${MyPiece._id}`, MyPiece);
+    console.log(res)
     dispatch({
       type: EDIT_PIECES_SUCCESS ,
       payload: res.data,
     });
   } catch (error) {
     // alert("there is an error");
-    // console.log(error);
+    console.log(error);
     
     dispatch({
       type: EDIT_PIECES_FAIL ,

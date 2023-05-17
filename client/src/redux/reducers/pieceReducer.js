@@ -15,7 +15,7 @@ import {
 
 const init = {
   loading: true,
-  pieces: [],
+  pieces: null,
   error:null
 };
 
@@ -55,7 +55,7 @@ case ADD_PIECES_FAIL:
         return {
           ...state,
           loading: false,
-          pieces: [payload],
+          pieces: payload,
         };
       case GET_PIECES_FAIL:
         return {

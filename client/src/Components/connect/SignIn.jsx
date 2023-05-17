@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate, useNavigate } from 'react-router-dom'
-import "./signup.css";
 import { getProfile, loginUser } from '../../redux/actions/userActions';
+import "./signin.css";
+
 
 
 
 const SignIn = () => {
-
+ 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -29,29 +30,30 @@ const SignIn = () => {
 
 
   return (
-    <div>
-    <form action="">
-
+    <div className='div-sign-in'>
+    <form id='form'>
+  
     {
         loading ? <h1>loading...</h1> 
 
-        // : localStorage.getItem('token') ?<Navigate  to="/profile"/>
+        : localStorage.getItem('token') ? (<Navigate  to="/profile"/>)
         // : user ? <Navigate  to="/profile"/>
 
         : 
 
       <>
 
-<h1 class="title-sign-up">SIGNIN</h1>
-
+<h1 class="title-sign-in">SIGN IN</h1>
+ 
 <div class="inputContainer">
-<label for="" class="label">Email</label>
+<label  className="label">Email</label>
 <br/>
 <input  type="text" class="input" placeholder="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
 </div>
 
+
 <div class="inputContainer">
-<label for="" class="label">Password</label>
+<label  className="label">Password</label>
 <br/>
 <input  type="text" class="input" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
 </div>
@@ -67,7 +69,7 @@ const SignIn = () => {
       <button>Sign in to your profile</button>    
     </Link> */}
     <div className='have-acc'>
-      <p>you already have an account</p>
+      <p>you haven't an account</p>
     <Link to="/signup">
       <p className='parag'>Back SignUp</p>
     </Link>

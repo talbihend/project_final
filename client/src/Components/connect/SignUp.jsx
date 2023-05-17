@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
-import "./signup.css";
 import { registerUser } from '../../redux/actions/userActions';
+import "./signup.css";
+
 
 
    
@@ -23,8 +24,9 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <form action="" class="form">
+    <div className='div-sign-up'>
+
+      <form id='formee'>
 
 {
         loading ? <h1>loading...</h1>  
@@ -35,22 +37,23 @@ const SignUp = () => {
       
       <>
 
-<h1 class="title-sign-up">SIGNUP</h1>
+<h1 class="title-sign-up">SIGN UP</h1>
 
 <div class="inputContainer">
-<label for="" class="label">Full Name</label>
+<label class="label">Full Name</label>
 <br/>
-<input  type="text" class="input" placeholder="full Name" value={fullName} onChange={(e)=>setFullName(e.target.value)}/>
+<input  type="text" class="input" placeholder="full name" value={fullName} onChange={(e)=>setFullName(e.target.value)}/>
 </div>
 
+
 <div class="inputContainer">
-<label for="" class="label">Email</label>
+<label class="label">Email</label>
 <br/>
 <input  type="text" class="input" placeholder="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
 </div>
 
 <div class="inputContainer">
-<label for="" class="label">Password</label>
+<label  class="label">Password</label>
 <br/>
 <input  type="text" class="input" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
 </div>

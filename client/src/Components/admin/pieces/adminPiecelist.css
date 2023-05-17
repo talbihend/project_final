@@ -1,0 +1,10 @@
+
+
+.piece-list-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title-adm-scr{
+    text-align: center;
+}

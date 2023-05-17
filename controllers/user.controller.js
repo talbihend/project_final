@@ -4,6 +4,10 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const secret = config.get("secret");
 
+
+
+///////////  register
+
 exports.register = async (req, res) => {
   const { fullName, email, password } = req.body;
 
@@ -42,6 +46,10 @@ exports.register = async (req, res) => {
       res.status(500).json({ msg: error.message });
     }
   };
+
+
+
+  ///////////  login
   
   exports.login = async (req, res) => {
     const { email, password } = req.body;
@@ -67,6 +75,14 @@ exports.register = async (req, res) => {
     }
   };
   
+
+
+    ///////////  authentification 
+
   exports.auth = (req, res) => {
     res.send(req.user);
   };
+
+
+
+

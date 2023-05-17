@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getPieces } from '../../redux/actions/pieceActions';
+// import { getPieces } from '../../../redux/actions/pieceActions';
+import { getPieces } from '../../../redux/actions/pieceActions';
 import AdminPieceCard from './AdminPieceCard';
+import "./adminPiecelist.css";
+
 
 
 const AdminPieceList = () => {
@@ -10,23 +13,29 @@ const AdminPieceList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPieces());
+    dispatch(getPieces()); 
   }, []);
   
 
 
   return (
-    <div>
-        <h1>Admin Screen List</h1>
+    <div >
+
+      <h1 className='title-adm-scr'>Admin Screen List</h1> 
+
+      <div className='piece-list-form'>
+
 
         {loading ? (
-        <h1>Loading ...</h1> ) :  
+        <h1>Loading ...</h1> ) : 
       
       (
         pieces && React.Children.toArray(pieces.map((el) => <AdminPieceCard piece={el} />))
       )}
 
         
+        
+      </div>
     </div>
   )
 }

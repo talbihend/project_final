@@ -1,23 +1,37 @@
 .inputContainer{
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 30px;
-    margin-left: 200px;
+    margin-left: 100px;
+  }
+  
+  #form{
+    margin-top: 30px;
+  
+    height: 345px;
+    width: 400px;
+    margin-left: 490px;
+
+    border-radius: 10px;
+    box-shadow: 5px  5px  10px  10px gainsboro;  
+    flex-direction: column;
   }
   .input{
     margin-top: 10px;
   }
-  .title-sign-up{
-    margin-left: 150px;
+  .title-sign-in{ 
+    text-align: center;
+     margin-top: 13px;
   
   }
   .Btn-sign-up{
-    margin-left: 230px;
-  
+    margin-left: 152px;
+    margin-top: 30px;
   }
   .have-acc{
     display: flex;
     margin-left: 140px;
     margin-top: 30px;
+    margin-left: 550px;
 
   }
   .parag{

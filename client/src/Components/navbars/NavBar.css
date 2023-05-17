@@ -1,7 +1,7 @@
 
 .div-nav{
     display: flex;
-    box-shadow: 10px 10px 10px 1px grey;
+    box-shadow: 10px 10px 10px 1px silver;
     /* background-color:	rgb( 247 , 247 , 243); */
     background-color: transparent;
     height: 100px;
@@ -26,6 +26,6 @@
     color: black;
 
 }
-.Link{
+.Lnk{
     text-decoration: none;
 }

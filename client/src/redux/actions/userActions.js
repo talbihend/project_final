@@ -1,4 +1,4 @@
-import {  GET_PROFILE, GET_PROFILE_FAIL, GET_PROFILE_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, REGISTER, REGISTER_FAIL, REGISTER_SUCCESS } from "../actionTypes/userActionTypes"
+import {  GET_PROFILE, GET_PROFILE_FAIL, GET_PROFILE_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, LOGOUT_FAIL, LOGOUT_SUCCESS, REGISTER, REGISTER_FAIL, REGISTER_SUCCESS } from "../actionTypes/userActionTypes"
 import axios from 'axios'
 
 
@@ -73,4 +73,26 @@ export const getProfile = () => async(dispatch) => {
         });
     }
 };
+
+/////////////  logout
+
+export const logout = () => async (dispatch) => {
+
+    dispatch({
+        type: LOGOUT 
+    })
+
+    try {
+        localStorage.removeItem("token");
+        dispatch({ type: LOGOUT_SUCCESS });
+
+    } catch (error) {
+        dispatch({
+            type: LOGOUT_FAIL ,
+            payload: error.response.data,
+        });
+    }
+
+    
+  };
 

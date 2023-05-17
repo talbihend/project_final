@@ -1,0 +1,31 @@
+.button-form{
+    margin-left: 25px;
+    height: 30px;
+    width: 60px;
+}
+
+.inputs-form{
+    height: 25px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+.btn-ok{
+     margin-left: 380px;
+     border-radius: 5px;
+     margin-top: 20px;
+     height: 27px;
+     width: 40px;
+     font-size: 16px;
+}
+
+.btn-cancel{
+    margin-left: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 27px;
+    width: 90px;
+    font-size: 16px;
+}

@@ -1,0 +1,10 @@
+.title-adm-scr{
+    text-align: center;
+    margin-top: 70px;
+}
+
+.cmd-list-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+

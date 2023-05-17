@@ -1,12 +1,34 @@
 .div-types{
     display: flex;
-    margin-left: 130px;
+    margin-left: 350px;
 
 }
 .grand-div{
     display: flex;
 }
 .titles-types{
-    margin-left: 50px;
+    margin-left: 50px; 
 
+}
+.title-choose{
+    margin-left: 490px;
+    margin-top: 150px;
+}
+.lnk{
+    text-decoration: none;
+    color: black;
+}
+.logo-contact{
+    height: 60px;
+    width: 60px;
+    color: black;
+    margin-left: 1150px;
+    margin-top: 40px;
+
+}
+.logo-type{
+    height: 50px;
+    width: 50px;
+    margin-left: 80px;
+    margin-top: 40px;
 }

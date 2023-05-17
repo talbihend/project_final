@@ -11,7 +11,7 @@ exports.add_piece = async (req, res) => {
             color, 
             cathegory
         })
-        await newPiece.save();
+        await newPiece.save(); 
         res.send(newPiece);
     }
     catch(error){
@@ -19,7 +19,7 @@ exports.add_piece = async (req, res) => {
     };
 };
 
-exports.get_piece = async(res)=>{
+exports.get_piece = async(req,res)=>{
     try {
         const pieces = await Piece.find();
         res.send(pieces);

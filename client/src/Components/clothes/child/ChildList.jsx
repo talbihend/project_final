@@ -1,12 +1,21 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PieceCard from '../baby/PieceCard';
+import { getPieces } from '../../../redux/actions/pieceActions';
+import "../list.css"
+
 
 const ChildList = () => {
 
   
+ 
+  const { pieces, loading } = useSelector((state) => state.piecesReducers);
+  // console.log(pieces);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getPieces());
+  }, []);
 
-  const { pieces, loading } = useSelector((state) => state);
 
   return (
     <div>
@@ -15,7 +24,7 @@ const ChildList = () => {
         <h1>Loading ...</h1> ) : 
       
       (
-        pieces&&React.Children.toArray(pieces.filter((el) => <PieceCard piece={el.cathegory==="child"} />))
+        pieces&&React.Children.toArray(pieces.filter((el) =>el.cathegory==="child" ).map(el=><PieceCard  piece={el}/>))
       )}
     </div>
   )

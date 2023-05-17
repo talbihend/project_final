@@ -1,0 +1,57 @@
+
+.div-card{
+    box-shadow: 5px  5px  10px  10px gainsboro;  
+    margin-top: 70px;
+    height: 300px;
+    width: 250px;
+    border-radius: 5px;
+    margin-left: 40px;
+
+
+}
+
+.img-form{
+height: 150px;
+width: 150px;
+margin-left: 38px;
+margin-bottom: 0px;
+margin-top: 20px;
+}
+
+.name-form{
+    margin-left: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.div-color-ref{
+    display: flex;
+    margin-left: 10px;
+}
+
+.color-form{
+
+
+}
+
+.reference-form{
+    margin-left: 10px;
+
+}
+
+.virgule{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+.div-btnat{
+    display: flex;
+}
+
+.button-del{
+    margin-left: 50px;
+    height: 30px;
+    width: 60px;
+}
+

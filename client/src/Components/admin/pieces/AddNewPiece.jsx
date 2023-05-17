@@ -1,8 +1,10 @@
 import   React, { useState } from 'react'
-// import { addMyNewUser, getUsers } from '../redux/actions';
 import { useDispatch } from "react-redux";
+// import { addMyNewPiece, getPieces } from '../../../redux/actions/pieceActions';
 import Modal from "react-modal";
-import { addMyNewPiece, getPieces } from '../../redux/actions/pieceActions';
+import { addMyNewPiece,getPieces } from '../../../redux/actions/pieceActions';
+import "./addNewPiece.css"
+
 
 const AddNewPiece = () => {
   
@@ -40,7 +42,7 @@ const [name, setName] = useState("");
   }
   return (
     <div>
-      <button className="add-user" onClick={openModal}>Add user</button>
+      <button className="btn-add-piece" onClick={openModal}>Add piece</button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}

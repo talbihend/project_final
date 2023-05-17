@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { editPieces, getPieces } from '../../redux/actions/pieceActions';
+import { editPieces, getPieces } from '../../../redux/actions/pieceActions';
 import Modal from "react-modal";
+import {MdEdit} from 'react-icons/md';
+import "./editPiece.css"
+
 
 
 const EditPiece = ({piece}) => {
@@ -47,14 +50,14 @@ const EditPiece = ({piece}) => {
     }
     return (
       <div>
-        <button className='button-form' onClick={openModal}>Edit</button>
+      <MdEdit className='button-form' onClick={openModal}/>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} >
             <input className='inputs-form'
               type="text"
               placeholder="name"
@@ -81,8 +84,8 @@ const EditPiece = ({piece}) => {
             />
 
             <div>
-              <button className='btn-inter-add-ok' type="submit">ok</button>
-              <button className='btn-inter-add-cancel' onClick={() => closeModal()}>Cancel</button>
+              <button className='btn-ok' type="submit">ok</button>
+              <button className='btn-cancel' onClick={() => closeModal()}>Cancel</button>
             </div>
           </form>
         </Modal></div>

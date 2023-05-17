@@ -1,11 +1,92 @@
-.div-contact{
-    display: flex;
+.grand-div{
+    /* display: flex; */
+    display: inline;
 }
-.input-customer{
-    margin-top: 10px;
-}
-.label-form{
+
+.form{
+    width: 900px;
+    height: 300px;
+    margin-left: 240px;
     margin-top: 30px;
-    padding-top: 3px;
-    font-size: 30px;
+    border-width: 0.1px;
+    border-color: grey;
+    border-radius: 10px;
+    display: flex;
+
+}
+.logo-back{
+    height: 50px;
+    width: 50px;
+    margin-bottom: 0px;
+    margin-left: 60px;
+    color: black;
+}
+.title-send-cmd{
+    text-align: center;
+    margin-top: 0px;
+}
+.div-costomer-detail{
+    /* text-align: center; */
+    margin-left: 60px;
+}
+
+.div-clothes-detail{
+    margin-left: 100px;
+}
+
+.label-form{
+    font-size: 18px;
+}
+.inputs-name{
+    height: 24px;
+    border-radius: 4px;
+
+    margin-left: 20px;
+
+
+}
+.inputs-phone{
+    height: 24px;
+    border-radius: 4px;
+    margin-left: 36px; 
+
+
+}.inputs-address{
+    height: 24px;
+    border-radius: 4px;    
+    margin-left: 105px;
+
+
+}.inputs-reference{
+    height: 24px;
+    border-radius: 4px;
+    margin-left: 86px;
+
+
+}.inputs-color{
+    height: 24px;
+    border-radius: 4px;
+    margin-left: 118px;
+
+
+}.inputs-size{
+    height: 24px;
+    border-radius: 4px;
+    margin-left: 130px;
+
+
+}.inputs-piece{
+    height: 24px;
+    border-radius: 4px;
+    margin-left: 30px;
+
+
+}
+.btn-send-cmd{
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 30px;
+    margin-left: 630px;
+    margin-top: 20px;
+    font-size: 18px;
 }
