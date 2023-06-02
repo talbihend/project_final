@@ -9,7 +9,7 @@ const secret = config.get("secret");
 ///////////  register
 
 exports.register = async (req, res) => {
-  const { fullName, email, password } = req.body;
+  const { fullName, email, password, userRole } = req.body;
 
   const existantUser = await User.findOne({ email });
   if (existantUser) res.status(409).json({ msg: "User already exists" });
@@ -19,6 +19,7 @@ exports.register = async (req, res) => {
       fullName,
       email,
       password,
+      userRole,
     });
 
     let salt = await bcryptjs.genSalt(10);
@@ -38,6 +39,7 @@ exports.register = async (req, res) => {
           id: newUser._id,
           fullName: newUser.fullName,
           email: newUser.email,
+          userRole : newUser.userRole,
         },
       });
 
@@ -68,7 +70,7 @@ exports.register = async (req, res) => {
     
       res.send({
         token,
-        user: { id: user._id, fullName: user.fullName, email: user.email },
+        user: { id: user._id, fullName: user.fullName, email: user.email, userRole : user.userRole },
       });
     } catch (error) {
       res.status(500).json({ msg: error.message });

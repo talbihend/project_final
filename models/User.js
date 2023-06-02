@@ -5,6 +5,11 @@ const userSchema = new schema ({
     fullName : String,
     email : String,
     password : String,
+    userRole: {
+        type: String,
+        roles: ["user", "admin"],
+        default: "user"
+      }
 });
 
     

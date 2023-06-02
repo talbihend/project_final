@@ -18,7 +18,7 @@ const WomenList = () => {
   return (
     <div className='div-list'>
 
-      {loading ? (
+      {loading ? ( 
         <h1>Loading ...</h1> ) : 
       
       (

@@ -7,7 +7,7 @@ const PieceCard = ({piece}) => {
     <div>
         
         <div className='div-card'>
-            <img src="https://cdn.shopify.com/s/files/1/0020/5370/1699/products/chemise-ikks-bebe-garcon-bleu-210333-1.jpg?v=1649158156" alt="logo"  className='img-form'/> 
+            <img src={piece.image} alt="logo"  className='img-form'/> 
 
             <h4 className='name-form' >{piece.name}</h4>
 

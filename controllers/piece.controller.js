@@ -3,9 +3,10 @@ const Piece = require("../models/Piece");
 
 
 exports.add_piece = async (req, res) => {
-    const { name, reference, color, cathegory } = req.body;
+    const { image, name, reference, color, cathegory } = req.body;
     try {
         const newPiece = new Piece({
+            image,
             name,
             reference,
             color, 

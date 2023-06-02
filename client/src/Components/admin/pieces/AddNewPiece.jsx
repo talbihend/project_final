@@ -3,19 +3,25 @@ import { useDispatch } from "react-redux";
 // import { addMyNewPiece, getPieces } from '../../../redux/actions/pieceActions';
 import Modal from "react-modal";
 import { addMyNewPiece,getPieces } from '../../../redux/actions/pieceActions';
-import "./addNewPiece.css"
+import "./addNewPiece.css";
+import { RiArrowGoBackFill} from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+
 
 
 const AddNewPiece = () => {
   
-const [name, setName] = useState("");
+ const [image, setImage] = useState("") ;
+ const [name, setName] = useState("");
   const [reference, setReference] = useState("");
   const [color, setColor] = useState("");
   const [cathegory, setCathegory] = useState("");
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addMyNewPiece( name, reference, color, cathegory));
+    const mypiece = { name, reference, color, cathegory
+    };
+    dispatch(addMyNewPiece( mypiece )); 
     dispatch(getPieces());
     closeModal();
     // console.log(addMyNewPiece())
@@ -42,6 +48,10 @@ const [name, setName] = useState("");
   }
   return (
     <div>
+
+     <Link to="/profile">
+        <RiArrowGoBackFill className="logooo-back" />
+      </Link>
       <button className="btn-add-piece" onClick={openModal}>Add piece</button>
       <Modal
         isOpen={modalIsOpen}
@@ -50,25 +60,31 @@ const [name, setName] = useState("");
         contentLabel="Example Modal"
       >
         <form onSubmit={handleSubmit}>
-          <input className='inputs-form'
+        <input className='inputs-add'
+            type="text"
+            placeholder="image"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          />
+          <input className='inputs-add'
             type="text"
             placeholder="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <input className='inputs-form'
+          <input className='inputs-add'
             type="text"
             placeholder="reference"
-            value={reference}
+            value={reference} 
             onChange={(e) => setReference(e.target.value)}
           />
-          <input className='inputs-form'
+          <input className='inputs-add'
             type="text"
             placeholder="color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
           />
-          <input className='inputs-form'
+          <input className='inputs-add'
             type="text"
             placeholder="cathegory"
             value={cathegory}

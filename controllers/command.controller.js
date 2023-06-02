@@ -4,16 +4,16 @@ const Command = require("../models/Command");
 
 
 exports.add_command = async (req, res) => {
-    const { customer_name ,  phone_number,  address ,   reference ,  color , size , number_of_piece  } = req.body;
+    const { customerName ,   phoneNumber ,  address ,   reference ,  color , size ,   numberOfPiece  } = req.body;
     try {
         const newCommand = new Command({
-            customer_name ,
-            phone_number,
+            customerName ,
+            phoneNumber ,
             address ,
             reference ,
-            color ,
-            size ,
-            number_of_piece 
+            color,
+            size,
+            numberOfPiece
         })
         await newCommand.save(); 
         res.send(newCommand);

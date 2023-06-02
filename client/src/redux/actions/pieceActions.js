@@ -18,12 +18,11 @@ import axios from "axios";
 
 //  add  piece
 
-export const addMyNewPiece =
-  (name, reference, color, cathegory) => async (dispatch) => {
+export const addMyNewPiece = (MyNewPiece) => async (dispatch) => {
     dispatch({
       type: ADD_PIECES ,
     });
-    const MyNewPiece = { name, reference, color, cathegory };
+    // const MyNewPiece = { image , name, reference, color, cathegory };
 
     try {
       const res = await axios.post("/piece/addpiece", MyNewPiece);
@@ -50,13 +49,13 @@ export const getPieces = () => async (dispatch) => {
   });
   try {
     const res = await axios.get("/piece/getpiece");
-    // console.log(res)
+    console.log(res)
     dispatch({
       type: GET_PIECES_SUCCESS ,
-      payload: res.data,
+      payload: res.data, 
     });
   } catch (error) {
-    // alert('get error')
+    alert('get error')
     // console.log(error);
 
     dispatch({

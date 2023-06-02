@@ -1,22 +1,62 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Navigate } from 'react-router-dom';
 import "./profileee.css";
 import { BiMessageDetail} from 'react-icons/bi';
+import { RiAdminLine} from 'react-icons/ri';
+import { BiLogOutCircle} from 'react-icons/bi';
+
 import { ImWoman} from 'react-icons/im';
 import { ImMan} from 'react-icons/im';
-import { FaChild} from 'react-icons/fa';
+import { FaChild, FaUserCircle} from 'react-icons/fa';
 import { FaBaby} from 'react-icons/fa';
+import { logout } from '../../redux/actions/userActions';
+
 
 
 
 const Profile = () => {
 
-  // na3melou condition ngollou itha kan ma lgitch token a3melli redirect lel login
-  return (
-    <div className='grand-div'>
-       
+  const dispatch = useDispatch();
+
+  const { users }=useSelector( state => state.userReducer );
+
+  console.log(users)
+
+  const handleSubmit =  (e) => {
+    e.preventDefault();
+      dispatch(logout());
      
-       
+      window.location.href='/signin';
+  } ; 
+      
+
+
+  return (
+    <div>
+
+        <div className='div-log-name-logout'>
+<div >
+        <FaUserCircle className='log-userrr' />
+        <h3  className='user-name'>{users.fullName}</h3>
+        {/* <h3>{users.email}</h3> */}
+        </div>
+
+        <BiLogOutCircle onClick={handleSubmit} className='btn-logout' />
+        
+       {  users.userRole==="admin"? 
+
+        (<Link className='lnk' to="/adminDashboard">
+             <RiAdminLine className='btn-adm-dash'/>
+        </Link> )
+        : null
+
+          }
+
+
+        </div> 
+
+
         <div>
         <h1 className='title-choose' >choose your clothes</h1>
 
@@ -51,7 +91,7 @@ const Profile = () => {
 
         <div>
           
-          <Link to="/contactus">           
+          <Link to="/contactus"  >           
            <BiMessageDetail className='logo-contact' />
           </Link> 
         </div>

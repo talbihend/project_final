@@ -10,4 +10,4 @@ router.post("/addcommand", add_command);
 router.get("/getcommand",  get_command);
 
 
-module.exports = router;
+module.exports = router; 

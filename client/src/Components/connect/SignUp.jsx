@@ -12,7 +12,8 @@ const SignUp = () => {
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(""); 
+  const [password, setPassword] = useState("");
+  // const [userRole, setUserRole] = useState("");
 
   const {loading, users}=useSelector( state => state.userReducer );//fi lcas hethi ne5dem bel root reducer mch bel reducer l3adi , wheka 3leh lazemni na3mel specification lel reducer li n7eb njiba men rootreducer , na3tih state.reducer bch ya5eth state li fi const init li f lcomponent reducer
   
@@ -57,6 +58,12 @@ const SignUp = () => {
 <br/>
 <input  type="text" class="input" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
 </div>
+
+{/* <div class="inputContainer">
+<label  class="label">user role</label>
+<br/>
+<input  type="text" class="input" placeholder="password" value={userRole} onChange={(e)=>setUserRole(e.target.value)}/>
+</div> */}
 
 <button  onClick={handleSubmit} className="Btn-sign-up">Sign up</button>
 

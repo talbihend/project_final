@@ -13,12 +13,12 @@ const ChildList = () => {
   // console.log(pieces);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPieces());
+    dispatch(getPieces());  
   }, []);
 
 
   return (
-    <div>
+    <div className='div-list'>
 
       {loading ? (
         <h1>Loading ...</h1> ) : 

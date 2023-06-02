@@ -15,7 +15,7 @@ import {
 
 const init = {
   loading: true,
-  pieces: null,
+  pieces: [],
   error:null
 };
 
@@ -25,7 +25,7 @@ const piecesReducers = (state = init, { type, payload }) => {
     
 ///   add cases
 
-case ADD_PIECES:
+case ADD_PIECES: 
   return {
     ...state,
     loading: true,
@@ -33,7 +33,9 @@ case ADD_PIECES:
 case ADD_PIECES_SUCCESS:
   return {
     ...state,
-    pieces: [...state.pieces, payload],
+    pieces:  payload, 
+    // pieces: [...state.pieces, payload], 
+
   };
 case ADD_PIECES_FAIL:
   return {

@@ -4,6 +4,7 @@ const schema = mongoose.Schema;
 
 
 const pieceSchema = new schema ({
+    image : String,
     name : String,
     reference : String,
     color : String,

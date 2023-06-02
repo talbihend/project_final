@@ -10,12 +10,13 @@ import "./adminPiecelist.css";
 const AdminPieceList = () => {
 
   const { pieces, loading } = useSelector((state) => state.piecesReducers);
+  // console.log(pieces)
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getPieces()); 
   }, []);
-  
+  // getPieces()
 
 
   return (

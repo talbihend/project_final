@@ -18,10 +18,10 @@ const ManList = () => {
 
 
   return (
-    <div>
+    <div className='div-list'>
 
       {loading ? (
-        <h1>Loading ...</h1> ) : 
+        <h1>Loading ...</h1> ) :  
       
       (
         pieces&&React.Children.toArray(pieces.filter((el) =>el.cathegory==="man" ).map(el=><PieceCard  piece={el}/>))

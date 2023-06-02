@@ -1,4 +1,3 @@
-
 import {
   ADD_COMMAND,
   ADD_COMMAND_FAIL,
@@ -6,51 +5,45 @@ import {
   GET_COMMAND,
   GET_COMMAND_FAIL,
   GET_COMMAND_SUCCESS,
-} from "../actionTypes/commandActionTypes"; 
+} from "../actionTypes/commandActionTypes";
 
 import axios from "axios";
 
-
-
-
-
 //  add  command
 
-export const addMyNewCommand =
-  (customer_name ,  phone_number,  address ,   reference ,  color , size , number_of_piece) => async (dispatch) => {
+export const addMyNewCommand = (MyNewCommand) => async (dispatch) => {
+  dispatch({
+    type: ADD_COMMAND,
+  });
+
+  try {
+    const res = await axios.post("/command/addcommand", MyNewCommand);  
+    // console.log(res);
     dispatch({
-      type: ADD_COMMAND ,
+      type: ADD_COMMAND_SUCCESS,
+      payload: res.data,
     });
-    const MyNewCommand = { customer_name ,  phone_number,  address ,   reference ,  color , size , number_of_piece};
+  } catch (error) {
+    console.log(error);
 
-    try {
-      const res = await axios.post("/command/addcommand", MyNewCommand);
-      // console.log(res)
-      dispatch({
-        type: ADD_COMMAND_SUCCESS ,
-        payload: res.data,
-      });
-    } catch (error) {
-      // console.log(error);
-
-      dispatch({
-        type: ADD_COMMAND_FAIL ,
-        payload: error,
-      });
-    }
-  };
+    dispatch({
+      type: ADD_COMMAND_FAIL,
+      payload: error,
+    });
+  }
+};
 
 //  get  command
 
 export const getCommand = () => async (dispatch) => {
   dispatch({
-    type: GET_COMMAND ,
+    type: GET_COMMAND,
   });
   try {
     const res = await axios.get("/command/getcommand");
     // console.log(res)
     dispatch({
-      type: GET_COMMAND_SUCCESS ,
+      type: GET_COMMAND_SUCCESS,
       payload: res.data,
     });
   } catch (error) {
@@ -58,9 +51,8 @@ export const getCommand = () => async (dispatch) => {
     // console.log(error);
 
     dispatch({
-      type: GET_COMMAND_FAIL ,
+      type: GET_COMMAND_FAIL,
       payload: error,
     });
   }
 };
-

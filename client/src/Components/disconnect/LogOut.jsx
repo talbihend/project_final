@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 const LogOut = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); 
 
   return (
     <div>

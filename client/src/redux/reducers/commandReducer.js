@@ -9,8 +9,8 @@ import {
   
   const init = {
     loading: true,
-    pieces: null,
-    error:null
+    commands: [] ,
+    errors:null
   };
   
   const commandReducer = (state = init, { type, payload }) => {
@@ -19,21 +19,25 @@ import {
       
   ///   add cases
   
-  case ADD_COMMAND:
+  case ADD_COMMAND:  
     return {
       ...state,
       loading: true,
     };
   case ADD_COMMAND_SUCCESS:
     return {
-      ...state,
-      commands: [...state.commands, payload],
+      ...state, loading:false,
+      commands: payload,    ////// payload howa variable yetbaddel 7asb les donneés te3i li da5althom fi lbackend, mathalan image wella non yetbaddal 7asb li nda5la fih 
+      
+      // commands: [...state.commands, payload], 
+      // ...state,loading:false,commands:payload,
+      errors:null 
     };
   case ADD_COMMAND_FAIL:
     return {
       ...state,
       loading: true,
-      error:payload
+      errors:payload
     };
   
   
@@ -55,7 +59,7 @@ import {
           return {
             ...state,
             loading: true,
-            error:payload
+            errors:payload
           };
   
           default:

@@ -6,3 +6,4 @@ import {combineReducers} from "redux";
 const rootReducer = combineReducers({ userReducer, piecesReducers, commandReducer });
 
 export default rootReducer;
+// export default combineReducers({ userReducer, piecesReducers, commandReducer });
